@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+<div class="login">
+  <div class="login-triangle"></div>
+        <h1 class="login-header">Add New Comment to <%= pet.name %></h1>
+            <form class="login-container" action="/pets/<%= pet._id %>/comments" method="POST">
+                    <input type="text" name="comment[text]" placeholder="text">
+
+                    <input type="submit" value="Submit!">
+            </form>
+            <button><a href="/pets">Go Back</a>
+        </div>
+
+<% include ../partials/footer %>
+

@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+<div class="login">
+  <div class="login-triangle"></div>
+        <h1 class="login-header">Edit <%= pet.name %></h1>
+            <form action="/pets/<%= pet._id %>?_method=PUT" method="POST">
+
+                    <input type="text" name="pet[name]" value="<%= pet.name %>">
+
+                    <input type="number" name="pet[price]" value="<%= pet.price %>" min="0.01" step= "0.01" >
+
+                    <input type="text" name="pet[image]" value="<%= pet.image %>">
+
+                    <input type="text" name="pet[description]" value="<%= pet.description %>">
+
+                    <input type="submit" value="Submit">
+
+            </form>
+            <button><a href="/pets">Go Back</a></button>
+</div>
+<% include ../partials/footer %>
+

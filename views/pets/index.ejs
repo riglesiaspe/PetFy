@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1>Welcome To Petfy</h1>
+             <p>Providing homes to Pets since HackUPC 2018</p>
+             <p>
+                <a class="btn btn-primary btn-large" href="/pets/new">Add a Pet for Adoption</a>
+             </p>
+         </div>
+     </header>
+
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% pets.forEach(function(pet){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= pet.image %>">
+                   <div class="caption">
+                       <h4><%= pet.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/pets/<%= pet._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>
